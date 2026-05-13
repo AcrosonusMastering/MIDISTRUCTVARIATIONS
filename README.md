@@ -1,9 +1,9 @@
 ### MIDISTRUCT Variations
-⭕ NOT FINISH
+Avaiblable release ======>>>>>>
 > A full-featured procedural MIDI generation engine written in ReaScript Lua.  
 
 ⭕if you're lost on github a direct link  on google drive:
-
+https://drive.google.com/file/d/1NT79Jc46PbDGYm7toVAXL8qkpIExDC6W/view?usp=sharing
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Platform: REAPER](https://img.shields.io/badge/Platform-REAPER%206%2B-orange.svg)](https://www.reaper.fm)
