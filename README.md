@@ -10,62 +10,63 @@
 [![Language: Lua](https://img.shields.io/badge/Language-Lua-blue.svg)](https://www.lua.org)
 [![No dependencies](https://img.shields.io/badge/Dependencies-None-green.svg)]()
 
-MIDISTRUCT Variations is an intelligent MIDI variation generator for REAPER, designed to transform a single MIDI take into eight distinct musical variations. Developed by Acrosonus Mastering, this tool uses algorithmic processing to handle everything from subtle humanization to complex melodic inversion.
-🌪️ The Madness Dial
+**MIDISTRUCT Variations** is a powerful algorithmic MIDI transformer for REAPER. It takes a single MIDI item and generates 12 unique musical variations, instantly organized into **Fixed Lanes** for seamless arrangement and composition.
 
-The core of the script is the Madness Dial (scaled 1–10), which dynamically adjusts the intensity of every algorithm:
+---
 
-    Levels 1–3: Subtle rhythmic nudges, light humanization, and polite dynamics.
+## ✨ Features
 
-    Levels 4–7: Clear structural changes, wider strums, and richer harmonies.
+- **The Madness Dial (1-10):** A global intensity controller that scales the complexity and "chaos" of all algorithms.
+- **12 Intelligent Algorithms:** From Bach-inspired inversions to modern rhythmic shredding.
+- **Fixed Lanes Integration:** Automatically configures your track to REAPER 7's Fixed Lane mode for easy auditioning.
+- **Non-Destructive Workflow:** Your original MIDI is preserved in Lane 0, and the entire process is wrapped in a single Undo block.
+- **Musical Intelligence:** Includes pitch-folding (keeping notes in range), beat-aware velocity curves, and organic micro-timing.
 
-    Levels 8–10: "Creative chaos" with aggressive syncopation, drifting pitch echoes, and extreme staccato plucks.
+---
 
-    The script uses ExtState to remember your last madness setting across different REAPER sessions.
+## 🛠 Installation
 
-🎹 Included Variations
+1. **Download:** Save `MIDISTRUCT_Variations_v4.lua` to your computer.
+2. **Locate Scripts Folder:** In REAPER, go to `Options > Show REAPER resource path in explorer/finder`. Open the `Scripts` folder.
+3. **Copy:** Move the `.lua` file into this folder.
+4. **Load:** - Open the **Action List** (`?`).
+   - Click `New action > Load ReaScript...`.
+   - Select `MIDISTRUCT_Variations_v4.lua`.
+5. **Run:** Select a MIDI item and run the script.
 
-When run, the script generates eight new takes within the selected MIDI item:
+---
 
-    Syncopation: Features rhythmic displacement and groove humanization.
+## 🎹 The 12 Variations
 
-    Smart Velocity: Applies beat-aware dynamics and sinusoidal accent curves.
+| Lane | Name | Musical Description |
+| :--- | :--- | :--- |
+| **0** | **Original** | A backup of your source material. |
+| **1** | **Syncopation** | Shifts rhythms to create groove and off-beat accents. |
+| **2** | **Smart Velocity** | Applies sinusoidal dynamics based on the beat. |
+| **3** | **Octave & Simplify** | Note reduction + intelligent octave shifting. |
+| **4** | **Strummer** | Simulates guitar/harp sweeps with micro-timing. |
+| **5** | **Gate / Staccato** | Shortens notes for a plucked, rhythmic feel. |
+| **6** | **Harmonizer** | Adds 5ths, sub-octaves, and a CC74 Filter Riser. |
+| **7** | **Ghost Delay** | MIDI-based echo with optional pitch drift. |
+| **8** | **Melodic Mirror** | Inverts the melody around its central axis. |
+| **9** | **Humanize** | Adds non-linear "human" errors to timing and velocity. |
+| **10** | **Rhythm Shredder** | Fragments notes into faster subdivisions. |
+| **11** | **Chaos Engine** | Experimental randomization within musical constraints. |
 
-    Octave & Simplify: Performs intelligent note reduction and octave color shifts.
+---
 
-    Strummer: Creates chord sweeps or arpeggios with organic micro-timing jitter.
+## ⚙️ Technical Details
 
-    Gate / Staccato: An aggressive rhythmic transformer that shortens notes into plucks.
+### The "Madness" Scaling
+Each algorithm uses the `Madness` input to scale its internal variables:
+- **Low (1-3):** Subtle variation, useful for humanization.
+- **Mid (4-7):** Structural changes, new melodies, and rhythms.
+- **High (8-10):** Total deconstruction and experimental textures.
 
-    Power Harmonizer: Adds perfect fifths and sub-bass layers, complete with a CC74 smoothstep filter riser.
+### Harmonic Integrity
+The **Melodic Mirror** uses a "Pitch Folding" technique. Instead of simply clamping notes that go out of the MIDI range (0-127), the script shifts them by octaves until they are back in range, preserving the harmonic class of the note.
 
-    Ghost Delay: Generates MIDI echoes with velocity decay and optional pitch drift.
-
-    Melodic Mirror: Bach-style melodic inversion around a pitch axis (Median or Center) with intelligent octave folding.
-
-🛠 Installation
-
-    Open REAPER.
-
-    Open the Actions List (default shortcut: ?).
-
-    Click New action > Load ReaScript...
-
-    Select MIDISTRUCT_Variations.lua.
-
-    (Optional) Assign the script to a toolbar button or keyboard shortcut for quick access.
-
-🚀 How to Use
-
-    Select a MIDI Media Item in your project.
-
-    Run the script.
-
-    Enter a Madness Level between 1 and 10.
-
-    Click OK. Eight new takes will be added to your item.
-
-    Use the T key (default REAPER shortcut) to cycle through and audition the new variations.
+---
 
 License
 
