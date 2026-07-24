@@ -2,7 +2,7 @@
 
 Changelog:
 
-V1.0.1: Fix linux error
+V2
 
 
 Avaiblable release ======>>>>>>
@@ -17,61 +17,51 @@ Avaiblable release ======>>>>>>
 [![No dependencies](https://img.shields.io/badge/Dependencies-None-green.svg)]()
 
 **MIDISTRUCT Variations** is a powerful algorithmic MIDI transformer for REAPER. It takes a single MIDI item and generates 12 unique musical variations, instantly organized into **Fixed Lanes** for seamless arrangement and composition.
+# MIDISTRUCT Variations
+
+A REAPER (ReaImGui) script that takes a single MIDI item and generates a batch of musical variations from it — one output lane per transformation you pick, laid out directly under your source item.
+
+**Version:** 2 · **Author:** Acrosonus Mastering · **License:** gpl-3.0
 
 ---
 
-## ✨ Features
+## Features
 
-- **The Madness Dial (1-10):** A global intensity controller that scales the complexity and "chaos" of all algorithms.
-- **12 Intelligent Algorithms:** From Bach-inspired inversions to modern rhythmic shredding.
-- **Fixed Lanes Integration:** Automatically configures your track to REAPER 7's Fixed Lane mode for easy auditioning.
-- **Non-Destructive Workflow:** Your original MIDI is preserved in Lane 0, and the entire process is wrapped in a single Undo block.
-- **Musical Intelligence:** Includes pitch-folding (keeping notes in range), beat-aware velocity curves, and organic micro-timing.
+- **24 generators** spanning rhythm, dynamics, melody, harmony, chords, and texture — from simple syncopation and staccato gating to true chord inversions, diatonic harmonization with smart voicing, Steve Reich–style phasing, and more.
+- **20 Style Presets** (Reggae Skank, Trap, Bossa Nova, Metal/Power Chords, Jazz Swing, Pop, Rock, Country/Folk, Blues, IDM/Glitch...) — one click sets a Madness level *and* a matching generator selection.
+- **5 Instrument Presets** (Drums, Bass, Piano/Chords, Melody/Lead) — a filter layer that unchecks whatever doesn't suit your source material. It's non-destructive: it always filters from your last full selection, so switching between instrument presets (or back to "Any / All") never permanently loses a generator choice.
+- **Drum Mode** — bypasses every pitch-reordering generator so a percussion track never gets scrambled into the wrong drum sounds.
+- **Auto key detection** (duration-weighted Krumhansl-Schmuckler correlation) or explicit root/scale selection.
+- **Reproducible seed control**, with a one-click random seed generator.
+- **PPQ-scaled**, tempo/time-signature-aware, CC/pitch-bend-preserving, with per-generator error isolation so one bad edge case never aborts the rest of the batch.
 
----
+## Requirements
 
-## 🛠 Installation
+- REAPER with the [ReaImGui](https://github.com/cfillion/reaimgui) extension (install via ReaPack).
+- A selected MIDI item containing at least one note.
 
-1. **Download:** Save `MIDISTRUCT_Variations_v4.lua` to your computer.
-2. **Locate Scripts Folder:** In REAPER, go to `Options > Show REAPER resource path in explorer/finder`. Open the `Scripts` folder.
-3. **Copy:** Move the `.lua` file into this folder.
-4. **Load:** - Open the **Action List** (`?`).
-   - Click `New action > Load ReaScript...`.
-   - Select `MIDISTRUCT_Variations_v4.lua`.
-5. **Run:** Select a MIDI item and run the script.
+## Installation
 
----
+1. Copy the `.lua` file into your REAPER `Scripts` folder, or import it via **Actions → Show action list → New action → Load ReaScript**.
+2. Run it from the Actions list, or bind it to a toolbar button / shortcut.
 
-## 🎹 The 12 Variations
+## Quick Start
 
-| Lane | Name | Musical Description |
-| :--- | :--- | :--- |
-| **0** | **Original** | A backup of your source material. |
-| **1** | **Syncopation** | Shifts rhythms to create groove and off-beat accents. |
-| **2** | **Smart Velocity** | Applies sinusoidal dynamics based on the beat. |
-| **3** | **Octave & Simplify** | Note reduction + intelligent octave shifting. |
-| **4** | **Strummer** | Simulates guitar/harp sweeps with micro-timing. |
-| **5** | **Gate / Staccato** | Shortens notes for a plucked, rhythmic feel. |
-| **6** | **Harmonizer** | Adds 5ths, sub-octaves, and a CC74 Filter Riser. |
-| **7** | **Ghost Delay** | MIDI-based echo with optional pitch drift. |
-| **8** | **Melodic Mirror** | Inverts the melody around its central axis. |
-| **9** | **Humanize** | Adds non-linear "human" errors to timing and velocity. |
-| **10** | **Rhythm Shredder** | Fragments notes into faster subdivisions. |
-| **11** | **Chaos Engine** | Experimental randomization within musical constraints. |
+1. Select a MIDI item.
+2. Run the script.
+3. Pick a Madness level (1–10) and, optionally, a Style Preset and/or Instrument Preset.
+4. Check the generators you want.
+5. Click **Generate Variations** — each checked generator produces its own item on its own fixed lane below the source.
 
----
+## Documentation
 
-## ⚙️ Technical Details
+- [`MIDISTRUCT_Variations_Manual.md`](./MIDISTRUCT_Variations_Manual.md) — full generator reference, preset tables, advanced settings, workflow tips (including manually chaining generators), and known limitations.
+- [`TECHNICAL_DOCS.md`](./TECHNICAL_DOCS.md) — architecture, internal conventions, and a contributor's guide for extending the script (new generators, new presets, testing approach).
 
-### The "Madness" Scaling
-Each algorithm uses the `Madness` input to scale its internal variables:
-- **Low (1-3):** Subtle variation, useful for humanization.
-- **Mid (4-7):** Structural changes, new melodies, and rhythms.
-- **High (8-10):** Total deconstruction and experimental textures.
+## Known Limitations
 
-### Harmonic Integrity
-The **Melodic Mirror** uses a "Pitch Folding" technique. Instead of simply clamping notes that go out of the MIDI range (0-127), the script shifts them by octaves until they are back in range, preserving the harmonic class of the note.
-
+- No built-in generator chaining in a single pass (workaround: regenerate on top of an already-generated lane — see the manual).
+- Auto key detection only recognizes major/natural minor, assumes a single key for the whole item, and is unreliable on very short phrases.
 ---
 
 License
