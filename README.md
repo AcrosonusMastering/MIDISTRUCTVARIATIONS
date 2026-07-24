@@ -9,7 +9,7 @@ Avaiblable release ======>>>>>>
 > A full-featured procedural MIDI generation engine written in ReaScript Lua.  
 
 ⭕if you're lost on github a direct link  on google drive:
-(https://drive.google.com/file/d/1b5N9PLpbO8yC1AMyEXcnW51ktwbnxJdn/view?usp=sharing)
+([https://drive.google.com/file/d/1b5N9PLpbO8yC1AMyEXcnW51ktwbnxJdn/view?usp=sharing](https://drive.google.com/file/d/1ajEAM1YFkaEIaYov5oOk99HlAf4fYBfi/view?usp=sharing))
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Platform: REAPER](https://img.shields.io/badge/Platform-REAPER%206%2B-orange.svg)](https://www.reaper.fm)
