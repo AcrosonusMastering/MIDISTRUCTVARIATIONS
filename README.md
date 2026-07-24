@@ -1,3 +1,5 @@
+<img width="892" height="1028" alt="Capture d&#39;écran 2026-07-24 134713" src="https://github.com/user-attachments/assets/a1ac7772-8672-47eb-805d-0bfe3db01411" />
+<img width="892" height="1028" alt="Capture d&#39;écran 2026-07-24 134713" src="https://github.com/user-attachments/assets/b1fcfd27-fd25-4ba4-82d5-23096c17b5de" />
 ### MIDISTRUCT Variations
 
 Changelog:
