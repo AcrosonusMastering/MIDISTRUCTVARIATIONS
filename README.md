@@ -17,7 +17,7 @@ Avaiblable release ======>>>>>>
 [![Language: Lua](https://img.shields.io/badge/Language-Lua-blue.svg)](https://www.lua.org)
 [![No dependencies](https://img.shields.io/badge/Dependencies-None-green.svg)]()
 
-**MIDISTRUCT Variations** is a powerful algorithmic MIDI transformer for REAPER. It takes a single MIDI item and generates 12 unique musical variations, instantly organized into **Fixed Lanes** for seamless arrangement and composition.
+**MIDISTRUCT Variations** is a powerful algorithmic MIDI transformer for REAPER. It takes a single MIDI item and generates 24 unique musical variations, instantly organized into **Fixed Lanes** for seamless arrangement and composition.
 # MIDISTRUCT Variations
 
 A REAPER (ReaImGui) script that takes a single MIDI item and generates a batch of musical variations from it — one output lane per transformation you pick, laid out directly under your source item.
